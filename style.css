@@ -1,0 +1,224 @@
+ @import url('https://fonts.googleapis.com/css2?family=Anton&family=Arbutus&family=Bitcount+Grid+Double:wght@100..900&family=Caprasimo&family=Changa+One:ital@0;1&family=Devonshire&family=Francois+One&family=Freckle+Face&family=Fruktur:ital@0;1&family=Gorditas:wght@400;700&family=Kavoon&family=Londrina+Sketch&family=Mogra&family=Patua+One&family=Piedra&family=Protest+Riot&family=Rubik+Beastly&family=Rubik+Dirt&family=Rubik+Distressed&family=Rubik+Glitch&family=Rubik+Maze&family=Rubik+Scribble&family=Rubik+Vinyl&family=Rubik+Wet+Paint&family=Satisfy&display=swap');
+
+        /* --- CSS Variables & Reset --- */
+        :root {
+            --color-bg-dark: #0a0a0a;
+            --color-text-white: #ffffff;
+            --color-text-gray: #888888;
+            --color-accent: #ffffff;
+            --font-main: 'Inter', sans-serif;
+            --transition-speed: 0.5s;
+            --easing: cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-style: normal;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: #f4f4f4;
+            min-height: 110vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        /* --- Main Component Layout --- */
+        .showcase-module {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            max-width: 1100px;
+            background-color: var(--color-bg-dark);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+            min-height: 600px; /* Ensure sufficient height */
+        }
+
+        /* --- Left Side: Visual/Image --- */
+        .showcase-module__visual {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+            background-color: #e0e0e0;
+        }
+
+        .showcase-module__image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            opacity: 0;
+            transition: opacity var(--transition-speed) var(--easing);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .showcase-module__image.is-active {
+            opacity: 1;
+            z-index: 2;
+        }
+
+        /* --- Right Side: Content --- */
+        .showcase-module__content {
+            flex: 1;
+            padding: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: var(--color-bg-dark);
+            color: var(--color-text-white);
+            position: relative;
+        }
+
+        /* --- Typography & Elements --- */
+        .quote-block {
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .quote-block__text {
+            font-size: 1.75rem; /* Large legible text */
+            line-height: 1.4;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all var(--transition-speed) var(--easing);
+        }
+
+        .quote-block__text.is-active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .quote-block__divider {
+            width: 100%;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.15);
+            margin-bottom: 2rem;
+        }
+
+        .author-info {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all var(--transition-speed) var(--easing);
+            transition-delay: 0.1s;
+        }
+
+        .author-info.is-active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .author-info__name {
+            font-size: 1.5rem;
+            font-weight: 500; /* Bold name */
+            text-transform: uppercase;
+            font-style: none;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+            display: block;
+            font-family: 'Anton', sans-serif;
+        }
+
+        .author-info__role {
+            font-size: 0.95rem;
+            color: var(--color-text-gray);
+            font-weight: 400;
+        }
+
+        /* --- Controls --- */
+        .control-panel {
+            display: flex;
+            gap: 1rem;
+            margin-top: 3rem;
+            align-items: center;
+        }
+
+        .control-panel__btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease, transform 0.2s ease;
+            color: white;
+        }
+
+        .control-panel__btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: scale(1.05);
+        }
+
+        .control-panel__btn:active {
+            transform: scale(0.95);
+        }
+
+        .control-panel__btn svg {
+            width: 20px;
+            height: 20px;
+            stroke-width: 2;
+            stroke: currentColor;
+            fill: none;
+        }
+
+        /* --- Number Counter (Animated) --- */
+        .slide-counter {
+            margin-left: auto; /* Push to far right or keep near buttons */
+            font-family: var(--font-main);
+            font-size: 0.9rem;
+            color: var(--color-text-gray);
+            font-feature-settings: "tnum";
+            font-variant-numeric: tabular-nums;
+            letter-spacing: 1px;
+        }
+        
+        .slide-counter__current {
+            color: var(--color-text-white);
+            font-weight: 600;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+        
+        /* Animation class for numbers */
+        .bump {
+            animation: bumpEffect 0.3s ease;
+        }
+
+        @keyframes bumpEffect {
+            0% { transform: translateY(0); opacity: 1; }
+            50% { transform: translateY(-5px); opacity: 0.5; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .showcase-module {
+                flex-direction: column;
+                height: auto;
+            }
+            
+            .showcase-module__visual {
+                height: 350px;
+            }
+            
+            .showcase-module__content {
+                padding: 2.5rem;
+            }
+
+            .quote-block__text {
+                font-size: 1.25rem;
+            }
+        }

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Testimonials</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+   
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <article class="showcase-module" id="testimonialSlider">
+        
+        <!-- Left: Images -->
+        <figure class="showcase-module__visual" id="imageContainer">
+            <!-- Images will be injected here via JS -->
+        </figure>
+
+        <!-- Right: Content -->
+        <section class="showcase-module__content">
+            <div class="quote-block">
+                <blockquote class="quote-block__text" id="quoteText">
+                    <!-- Text inject -->
+                </blockquote>
+                <div class="quote-block__divider"></div>
+                
+                <div class="author-info" id="authorInfo">
+                    <cite class="author-info__name" id="authorName">Name Here</cite>
+                    <span class="author-info__role" id="authorRole">Role Here</span>
+                </div>
+            </div>
+
+            <div class="control-panel">
+                <button class="control-panel__btn" id="prevBtn" aria-label="Previous Slide">
+                    <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                </button>
+                <button class="control-panel__btn" id="nextBtn" aria-label="Next Slide">
+                    <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+
+                <!-- Number Animation Element -->
+                <div class="slide-counter">
+                    <span class="slide-counter__current" id="currentCounter">01</span> / <span id="totalCounter">03</span>
+                </div>
+            </div>
+        </section>
+
+    </article>
+
+    <script src="script.js"></script>
+</body>
+</html>
