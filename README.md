@@ -4,6 +4,8 @@
 
 Vector is a dynamic split-panel testimonial component that pairs high-impact portrait imagery with animated text content. Designed for agency portfolios, corporate sites, and high-end service showcases, it features smooth crossfade transitions, keyboard navigation, and a minimalist dark-mode aesthetic.
 
+<img width="1920" height="965" alt="vector" src="https://github.com/user-attachments/assets/a7f463ff-9d92-4e88-85d1-e51f88fa957d" />
+
 ## Live Preview
 
 [View Demo](https://lefajmofokeng.github.io/Vector)  
@@ -505,6 +507,7 @@ For issues, feature requests, or contributions:
 4. Share reproduction steps
 
 Built by Lefa Mofokeng as part of a professional component library.
+
 
 
 
