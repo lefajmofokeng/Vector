@@ -6,7 +6,7 @@ Vector is a dynamic split-panel testimonial component that pairs high-impact por
 
 ## Live Preview
 
-[View Demo](https://thisislefa.github.io/Vector)  
+[View Demo](https://lefajmofokeng.github.io/Vector)  
 
 ---
 
@@ -505,5 +505,6 @@ For issues, feature requests, or contributions:
 4. Share reproduction steps
 
 Built by Lefa Mofokeng as part of a professional component library.
+
 
 
